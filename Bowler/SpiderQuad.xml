@@ -2,11 +2,11 @@
 <mobilebase>
 	<cadEngine>
 		<git>https://github.com/xaveagle/SpiderQuad.git</git>
-		<file>Bowler/MediumCad.groovy</file>
+		<file>Bowler/SpiderQuadCad.groovy</file>
 	</cadEngine>
 	<driveEngine>
 		<git>https://github.com/xaveagle/SpiderQuad.git</git>
-		<file>Bowler/DynamicWalking.groovy</file>
+		<file>Bowler/DynamicWalkingSpiderQuad.groovy</file>
 	</driveEngine>
 
 <name>MediumKat</name>
@@ -15,7 +15,7 @@
 <name>RearLeft</name>
 	<cadEngine>
 		<git>https://github.com/xaveagle/SpiderQuad.git</git>
-		<file>Bowler/MediumCad.groovy</file>
+		<file>Bowler/SpiderQuadCad.groovy</file>
 	</cadEngine>
 	<kinematics>
 		<git>https://gist.github.com/17f2da51abe25e043043946d91610ddd.git</git>
@@ -210,7 +210,7 @@
 <name>FrontRight</name>
 	<cadEngine>
 		<git>https://github.com/xaveagle/SpiderQuad.git</git>
-		<file>Bowler/MediumCad.groovy</file>
+		<file>Bowler/SpiderQuadCad.groovy</file>
 	</cadEngine>
 	<kinematics>
 		<git>https://gist.github.com/17f2da51abe25e043043946d91610ddd.git</git>
@@ -405,7 +405,7 @@
 <name>FrontLeft</name>
 	<cadEngine>
 		<git>https://github.com/xaveagle/SpiderQuad.git</git>
-		<file>Bowler/MediumCad.groovy</file>
+		<file>Bowler/SpiderQuadCad.groovy</file>
 	</cadEngine>
 	<kinematics>
 		<git>https://gist.github.com/17f2da51abe25e043043946d91610ddd.git</git>
@@ -600,7 +600,7 @@
 <name>RearRight</name>
 	<cadEngine>
 		<git>https://github.com/xaveagle/SpiderQuad.git</git>
-		<file>Bowler/MediumCad.groovy</file>
+		<file>Bowler/SpiderQuadCad.groovy</file>
 	</cadEngine>
 	<kinematics>
 		<git>https://gist.github.com/17f2da51abe25e043043946d91610ddd.git</git>
@@ -795,7 +795,7 @@
 <name>Head</name>
 	<cadEngine>
 		<git>https://github.com/xaveagle/SpiderQuad.git</git>
-		<file>Bowler/MediumCad.groovy</file>
+		<file>Bowler/SpiderQuadCad.groovy</file>
 	</cadEngine>
 	<kinematics>
 		<git>https://github.com/madhephaestus/carl-the-hexapod.git</git>
@@ -936,7 +936,7 @@
 <name>Tail</name>
 	<cadEngine>
 		<git>https://github.com/xaveagle/SpiderQuad.git</git>
-		<file>Bowler/MediumCad.groovy</file>
+		<file>Bowler/SpiderQuadCad.groovy</file>
 	</cadEngine>
 	<kinematics>
 		<git>https://github.com/madhephaestus/carl-the-hexapod.git</git>
