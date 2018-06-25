@@ -8,7 +8,7 @@ sudo apt-get upgrade
 ##
 sudo apt install libopencv2.4-java
 wget https://github.com/CommonWealthRobotics/BowlerStudio/releases/download/0.25.2/BowlerScriptingKernel-0.31.1.jar
-git clone https://github.com/keionbis/SmallKat.git
+git clone https://github.com/xaveagle/SpiderQuad.git
 sudo apt-get install dnsmasq hostapd
 denyinterfaces wlan0
 sudo cp interfaces /etc/network
