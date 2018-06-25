@@ -8,7 +8,7 @@ import com.neuronrobotics.sdk.addons.kinematics.imu.*;
 
 if(args == null)
 	args = ["https://github.com/xaveagle/SpiderQuad.git",
-		"Bowler/MediumKat.xml"]
+		"Bowler/SpiderQuad.xml"]
 
 public class SimpleServoHID extends HIDSimplePacketComs {
 	private PacketType servos = new edu.wpi.SimplePacketComs.BytePacketType(1962, 64);
