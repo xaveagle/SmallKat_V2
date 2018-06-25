@@ -7,7 +7,7 @@ import edu.wpi.SimplePacketComs.phy.HIDSimplePacketComs;
 import com.neuronrobotics.sdk.addons.kinematics.imu.*;
 
 if(args == null)
-	args = ["https://github.com/keionbis/SmallKat.git",
+	args = ["https://github.com/xaveagle/SpiderQuad.git",
 		"Bowler/MediumKat.xml"]
 
 public class SimpleServoHID extends HIDSimplePacketComs {
