@@ -25,6 +25,7 @@ return new ICadGenerator(){
 		ArrayList<CSG> allCad=new ArrayList<>();
 		String limbName = d.getScriptingName()
 		File legFile = null
+		File legFile2 = null
 		boolean mirror=true
 		if(limbName.contentEquals("DefaultLeg3")||limbName.contentEquals("DefaultLeg4")){
 			println "Mirror leg parts"
@@ -39,81 +40,49 @@ return new ICadGenerator(){
 		if(legRoot.getX()>0){
 			rear=false;
 		}
-		if(limbName.contentEquals("Tail")){
-			if(linkIndex >1)
-				return allCad;
-			/*if(linkIndex ==0){
+	
+		if(leftSide){
+			if(linkIndex ==0){
 				legFile = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
-				"STLs/c.stl");
+				"STLs/Shoulder.stl");
+				legFile2 = ScriptingEngine.fileFromGit(
+				"https://github.com/xaveagle/SpiderQuad.git",
+				"STLs/Shoulder Cover.stl");
 	
 			}
 			if(linkIndex ==1){
 				legFile = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
-				"STLs/Shoulder.stl");
+				"STLs/Leg.stl");
+	
 			}
-			*/
-			
-		}else if(limbName.contentEquals("Head")){
-			if(linkIndex >1)
-				return allCad;
-			/*if(linkIndex ==0){
+	
+			if(linkIndex ==2){
 				legFile = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
-				"STLs/Shoulder.stl");
-
+				"STLs/Foot.stl");
+			}
+		}
+		else{
+			if(linkIndex ==0){
+				legFile = ScriptingEngine.fileFromGit(
+				"https://github.com/xaveagle/SpiderQuad.git",
+				"STLs/Shoulder Mirror.stl");
+	
 			}
 			if(linkIndex ==1){
 				legFile = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
-				"STLs/Shoulder.stl");
+				"STLs/Leg Mirror.stl");
+	
 			}
-			*/
-			if(linkIndex ==2)
-				return allCad;
-		}
-		else{
-			if(leftSide){
-				if(linkIndex ==0){
-					legFile = ScriptingEngine.fileFromGit(
-					"https://github.com/xaveagle/SpiderQuad.git",
-					"STLs/Shoulder.stl");
-		
-				}
-				if(linkIndex ==1){
-					legFile = ScriptingEngine.fileFromGit(
-					"https://github.com/xaveagle/SpiderQuad.git",
-					"STLs/Leg.stl");
-		
-				}
-		
-				if(linkIndex ==2){
-					legFile = ScriptingEngine.fileFromGit(
-					"https://github.com/xaveagle/SpiderQuad.git",
-					"STLs/Foot.stl");
-				}
-			}
-			else{
-				if(linkIndex ==0){
-					legFile = ScriptingEngine.fileFromGit(
-					"https://github.com/xaveagle/SpiderQuad.git",
-					"STLs/Shoulder Mirror.stl");
-		
-				}
-				if(linkIndex ==1){
-					legFile = ScriptingEngine.fileFromGit(
-					"https://github.com/xaveagle/SpiderQuad.git",
-					"STLs/Leg Mirror.stl");
-		
-				}
-		
-				if(linkIndex ==2){
-					legFile = ScriptingEngine.fileFromGit(
-					"https://github.com/xaveagle/SpiderQuad.git",
-					"STLs/Foot Mirror.stl");
-		
-				}
+	
+			if(linkIndex ==2){
+				legFile = ScriptingEngine.fileFromGit(
+				"https://github.com/xaveagle/SpiderQuad.git",
+				"STLs/Foot Mirror.stl");
+	
 			}
 		}
 
@@ -131,6 +100,11 @@ return new ICadGenerator(){
 		// Load the .CSG from the disk and cache it in memory
 		println "Loading " +legFile
 		CSG body  = Vitamins.get(legFile)
+		CSG body2
+		  
+		if(legfile2 != null){
+			body2 = Vitamins.get(legFile2)
+		}
 		if(linkIndex ==0){
 			//body=moveDHValues(body,dh)
 				body=body.rotx(180)
@@ -148,8 +122,15 @@ return new ICadGenerator(){
 		}
 		
 		body.setManipulator(manipulator);
-	
-		def parts = [body ] as ArrayList<CSG>
+		if(legfile2 != null)
+		body2.setManipulator(manipulator);
+		
+		def parts = [body] as ArrayList<CSG>
+		
+		if(legfile2 != null){
+		parts.add(body2)
+		}
+		
 		for(int i=0;i<parts.size();i++){
 			parts.get(i).setColor(javafx.scene.paint.Color.RED)
 		}
