@@ -40,7 +40,7 @@ return new ICadGenerator(){
 			rear=false;
 		}
 		
-		/*if(limbName.contentEquals("Tail")){
+		if(limbName.contentEquals("Tail")){
 			if(linkIndex >1)
 				return allCad;
 			if(linkIndex ==0){
@@ -57,7 +57,7 @@ return new ICadGenerator(){
 	
 			
 		}
-		/*else if(limbName.contentEquals("Head")){
+		else if(limbName.contentEquals("Head")){
 			if(linkIndex >1)
 				return allCad;
 			if(linkIndex ==0){
@@ -138,7 +138,7 @@ return new ICadGenerator(){
 		if(linkIndex ==0){
 			//body=moveDHValues(body,dh)
 
-		/*	if(limbName.contentEquals("Head")||limbName.contentEquals("Tail")){
+			if(limbName.contentEquals("Head")||limbName.contentEquals("Tail")){
 				body=body
 				.rotz(90)
 				.rotx(180)
@@ -154,7 +154,7 @@ return new ICadGenerator(){
 			}
 				
 		}
-		/*if(linkIndex ==1){
+		if(linkIndex ==1){
 			
 
 			if(limbName.contentEquals("Head")){
