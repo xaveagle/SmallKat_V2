@@ -26,7 +26,7 @@ return new ICadGenerator(){
 		String limbName = d.getScriptingName()
 		File legFile = null
 		boolean mirror=true
-		if(limbName.contentEquals("FrontLeft")||limbName.contentEquals("RearRight")){
+		if(limbName.contentEquals("DefaultLeg3")||limbName.contentEquals("DefaultLeg4")){
 			println "Mirror leg parts"
 			mirror=false
 		}
