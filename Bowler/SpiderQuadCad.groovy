@@ -25,9 +25,9 @@ return new ICadGenerator(){
 		ArrayList<CSG> allCad=new ArrayList<>();
 		String limbName = d.getScriptingName()
 		File legFile = null
-		File legFile2 = null
+		File legfile2 = null
 		boolean mirror=true
-		if(limbName.contentEquals("DefaultLeg3")||limbName.contentEquals("DefaultLeg4")){
+		if(limbName.contains("Left"){
 			println "Mirror leg parts"
 			mirror=false
 		}
@@ -46,7 +46,7 @@ return new ICadGenerator(){
 				legFile = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Shoulder.stl");
-				legFile2 = ScriptingEngine.fileFromGit(
+				legfile2 = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Shoulder Cover.stl");
 	
@@ -103,7 +103,7 @@ return new ICadGenerator(){
 		CSG body2
 		  
 		if(legfile2 != null){
-			body2 = Vitamins.get(legFile2)
+			body2 = Vitamins.get(legfile2)
 		}
 		if(linkIndex ==0){
 			//body=moveDHValues(body,dh)
@@ -111,6 +111,9 @@ return new ICadGenerator(){
 				//.rotx(180)
 				//if(rear)
 					//body=body.rotx(180)
+					if(legfile2 != null){
+						body2=body2.rotx(180)
+					}
 				
 		}
 		if(linkIndex ==1){
