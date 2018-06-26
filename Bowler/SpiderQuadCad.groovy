@@ -26,7 +26,7 @@ return new ICadGenerator(){
 		String limbName = d.getScriptingName()
 		File legFile = null
 		boolean mirror=true
-		if(limbName.contentEquals("DefaultLeg3")||limbName.contentEquals("DefaultLeg4")){
+		if(limbName.contentEquals("FrontLeft")||limbName.contentEquals("RearRight")){
 			println "Mirror leg parts"
 			mirror=false
 		}
@@ -61,6 +61,7 @@ return new ICadGenerator(){
 					"STLs/Foot.stl");
 				}
 			}
+		}
 			else{
 				if(linkIndex ==0){
 					legFile = ScriptingEngine.fileFromGit(
