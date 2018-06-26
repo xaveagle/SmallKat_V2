@@ -132,7 +132,7 @@ return new ICadGenerator(){
 		println "Loading " +legFile
 		CSG body  = Vitamins.get(legFile)
 		if(linkIndex ==0){
-			body=moveDHValues(body,dh)
+			//body=moveDHValues(body,dh)
 				//body=body.roty(180)
 				//.rotx(180)
 				//if(rear)
