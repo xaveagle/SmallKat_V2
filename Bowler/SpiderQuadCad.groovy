@@ -75,7 +75,6 @@ return new ICadGenerator(){
 			if(linkIndex ==2)
 				return allCad;
 		}
-		*/
 		else{
 			if(leftSide){
 				if(linkIndex ==0){
