@@ -40,78 +40,81 @@ return new ICadGenerator(){
 			rear=false;
 		}
 		
-		if(limbName.contentEquals("Tail")){
+		/*if(limbName.contentEquals("Tail")){
 			if(linkIndex >1)
 				return allCad;
 			if(linkIndex ==0){
 				legFile = ScriptingEngine.fileFromGit(
-				"https://github.com/OperationSmallKat/SmallKat_V2.git",
+				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/MKTailandHeadMount.stl");
 	
 			}
 			if(linkIndex ==1){
 				legFile = ScriptingEngine.fileFromGit(
-				"https://github.com/OperationSmallKat/SmallKat_V2.git",
+				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/MKTail.stl");
 			}
 	
 			
-		}else if(limbName.contentEquals("Head")){
+		}
+		/*else if(limbName.contentEquals("Head")){
 			if(linkIndex >1)
 				return allCad;
 			if(linkIndex ==0){
 				legFile = ScriptingEngine.fileFromGit(
-				"https://github.com/OperationSmallKat/SmallKat_V2.git",
+				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/MKTailandHeadMount.stl");
 
 			}
 			if(linkIndex ==1){
 				legFile = ScriptingEngine.fileFromGit(
-				"https://github.com/OperationSmallKat/SmallKat_V2.git",
+				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/MKHead.stl");
 			}
 	
 			if(linkIndex ==2)
 				return allCad;
-		}else{
+		}
+		*/
+		else{
 			if(leftSide){
 				if(linkIndex ==0){
 					legFile = ScriptingEngine.fileFromGit(
-					"https://github.com/OperationSmallKat/SmallKat_V2.git",
-					"STLs/MKCat Shoulder.stl");
+					"https://github.com/xaveagle/SpiderQuad.git",
+					"STLs/Shoulder.stl");
 		
 				}
 				if(linkIndex ==1){
 					legFile = ScriptingEngine.fileFromGit(
-					"https://github.com/OperationSmallKat/SmallKat_V2.git",
-					"STLs/MKCat Leg Mirror.stl");
+					"https://github.com/xaveagle/SpiderQuad.git",
+					"STLs/Leg.stl");
 		
 				}
 		
 				if(linkIndex ==2){
 					legFile = ScriptingEngine.fileFromGit(
-					"https://github.com/OperationSmallKat/SmallKat_V2.git",
-					"STLs/MKCat Foot.stl");
+					"https://github.com/xaveagle/SpiderQuad.git",
+					"STLs/Foot.stl");
 				}
 			}
 			else{
 				if(linkIndex ==0){
 					legFile = ScriptingEngine.fileFromGit(
-					"https://github.com/OperationSmallKat/SmallKat_V2.git",
-					"STLs/MKCat Shoulder Mirror.stl");
+					"https://github.com/xaveagle/SpiderQuad.git",
+					"STLs/Shoulder Mirror.stl");
 		
 				}
 				if(linkIndex ==1){
 					legFile = ScriptingEngine.fileFromGit(
-					"https://github.com/OperationSmallKat/SmallKat_V2.git",
-					"STLs/MKCat Leg.stl");
+					"https://github.com/xaveagle/SpiderQuad.git",
+					"STLs/Leg Mirror.stl");
 		
 				}
 		
 				if(linkIndex ==2){
 					legFile = ScriptingEngine.fileFromGit(
-					"https://github.com/OperationSmallKat/SmallKat_V2.git",
-					"STLs/MKCat Foot Mirror.stl");
+					"https://github.com/xaveagle/SpiderQuad.git",
+					"STLs/Foot Mirror.stl");
 		
 				}
 			}
@@ -135,7 +138,7 @@ return new ICadGenerator(){
 		if(linkIndex ==0){
 			//body=moveDHValues(body,dh)
 
-			if(limbName.contentEquals("Head")||limbName.contentEquals("Tail")){
+		/*	if(limbName.contentEquals("Head")||limbName.contentEquals("Tail")){
 				body=body
 				.rotz(90)
 				.rotx(180)
@@ -151,7 +154,7 @@ return new ICadGenerator(){
 			}
 				
 		}
-		if(linkIndex ==1){
+		/*if(linkIndex ==1){
 			
 
 			if(limbName.contentEquals("Head")){
@@ -169,6 +172,7 @@ return new ICadGenerator(){
 				body=body.roty(180)
 			}
 		}
+		*/
 		if(linkIndex ==2){
 			body=body.roty(180)
 
@@ -188,8 +192,8 @@ return new ICadGenerator(){
 		ArrayList<CSG> allCad=new ArrayList<>();
 
 		File mainBodyFile = ScriptingEngine.fileFromGit(
-			"https://github.com/OperationSmallKat/SmallKat_V2.git",
-			"STLs/MKBody.stl");
+			"https://github.com/xaveagle/SpiderQuad.git",
+			"STLs/Body.stl");
 
 		// Load the .CSG from the disk and cache it in memory
 		CSG body  = Vitamins.get(mainBodyFile)
