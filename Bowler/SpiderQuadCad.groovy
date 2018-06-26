@@ -42,7 +42,7 @@ return new ICadGenerator(){
 		if(limbName.contentEquals("Tail")){
 			if(linkIndex >1)
 				return allCad;
-			if(linkIndex ==0){
+			/*if(linkIndex ==0){
 				legFile = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/c.stl");
@@ -53,12 +53,12 @@ return new ICadGenerator(){
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Shoulder.stl");
 			}
-	
+			*/
 			
 		}else if(limbName.contentEquals("Head")){
 			if(linkIndex >1)
 				return allCad;
-			if(linkIndex ==0){
+			/*if(linkIndex ==0){
 				legFile = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Shoulder.stl");
@@ -69,7 +69,7 @@ return new ICadGenerator(){
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Shoulder.stl");
 			}
-	
+			*/
 			if(linkIndex ==2)
 				return allCad;
 		}
