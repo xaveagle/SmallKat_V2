@@ -108,13 +108,11 @@ return new ICadGenerator(){
 				
 		}
 		if(linkIndex ==1){
-				//body=body.roty(180)
+			//body=body.roty(180)
 			}
-		}
 		
 		if(linkIndex ==2){
 			//body=body.roty(180)
-
 		}
 		
 		body.setManipulator(manipulator);
