@@ -1,5 +1,5 @@
 
-def cat =ScriptingEngine.gitScriptRun(	"https://github.com/xaveagle/SpiderQuad.git", 
+def quad =ScriptingEngine.gitScriptRun(	"https://github.com/xaveagle/SpiderQuad.git", 
 								"loadRobot.groovy", 
 ["https://github.com/xaveagle/SpiderQuad.git",
 		"Bowler/SpiderQuad.xml"]);
@@ -46,14 +46,14 @@ while (!Thread.interrupted()){
 	}
 	if(Math.abs(rotx)>0.1 || Math.abs(roty)>0.1){
 		TransformNR move = new TransformNR(displacement,0,0,new RotationNR(rotx,0,roty))
-		cat.getWalkingDriveEngine().pose(move)
+		quad.getWalkingDriveEngine().pose(move)
 	}
 	if(Math.abs(displacement)>0.1 || Math.abs(rot)>0.1){
 		println "displacement "+displacement+" rot "+rot
 		println "tilt "+rotx+" rot "+roty
 		
 		TransformNR move = new TransformNR(displacement,0,0,new RotationNR(rotx,rot,roty))
-		cat.DriveArc(move, toSeconds);
+		quad.DriveArc(move, toSeconds);
 	}
 	
 }
