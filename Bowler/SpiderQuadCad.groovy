@@ -132,19 +132,19 @@ return new ICadGenerator(){
 		println "Loading " +legFile
 		CSG body  = Vitamins.get(legFile)
 		if(linkIndex ==0){
-			//body=moveDHValues(body,dh)
+			body=moveDHValues(body,dh)
 				//body=body.roty(180)
 				//.rotx(180)
-				if(rear)
+				//if(rear)
 					//body=body.rotx(180)
 				
 		}
 		if(linkIndex ==1){
-			body=body.roty(180)
+			//body=body.roty(180)
 			}
 		
 		if(linkIndex ==2){
-			body=body.roty(180)
+			//body=body.roty(180)
 		}
 		
 		body.setManipulator(manipulator);
