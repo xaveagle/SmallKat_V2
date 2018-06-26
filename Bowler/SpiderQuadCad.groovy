@@ -101,43 +101,19 @@ return new ICadGenerator(){
 		CSG body  = Vitamins.get(legFile)
 		if(linkIndex ==0){
 			//body=moveDHValues(body,dh)
-
-			if(limbName.contentEquals("Head")||limbName.contentEquals("Tail")){
-				body=body
-				.rotz(90)
-				.rotx(180)
-				.movex(-41)
-				.movey(-21)
-				.movez(-22)
-					//.movez(-11.5)
-			}	else{
-				body=body.roty(180)
-				.rotx(180)
+				//body=body.roty(180)
+				//.rotx(180)
 				//if(rear)
 					//body=body.rotx(180)
-			}
 				
 		}
 		if(linkIndex ==1){
-			
-
-			if(limbName.contentEquals("Head")){
-				body=body
-				.roty(180)
-				.movex(50)
-					//.movey(-18)
-					//.movez(-38.5)
-			}else if(limbName.contentEquals("Tail")){
-				body=body
-				.roty(180)
-				.rotz(-90)
-				.movey(125)
-			}else{
-				body=body.roty(180)
+				//body=body.roty(180)
 			}
 		}
+		
 		if(linkIndex ==2){
-			body=body.roty(180)
+			//body=body.roty(180)
 
 		}
 		
