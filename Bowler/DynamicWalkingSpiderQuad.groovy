@@ -21,7 +21,7 @@ import com.neuronrobotics.sdk.addons.kinematics.imu.*
 if(args==null){
 	double stepOverHeight=10;
 	long stepOverTime=20*5*2;// Servo loop times number of points times Nyquest doubeling
-	Double zLock=-3;
+	Double zLock=-20;
 	Closure calcHome = { DHParameterKinematics leg -> 
 			TransformNR h=leg.calcHome() 
 	 		TransformNR  legRoot= leg.getRobotToFiducialTransform()

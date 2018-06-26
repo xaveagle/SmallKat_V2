@@ -24,8 +24,8 @@ return new ICadGenerator(){
 	public ArrayList<CSG> generateCad(DHParameterKinematics d, int linkIndex) {
 		ArrayList<CSG> allCad=new ArrayList<>();
 		String limbName = d.getScriptingName()
-		File legFile = null
-		File legfile2 = null
+		File legFiles = null
+		File covers = null
 		boolean mirror=true
 		if(limbName.contains("Left"){
 			println "Mirror leg parts"
@@ -43,43 +43,46 @@ return new ICadGenerator(){
 	
 		if(leftSide){
 			if(linkIndex ==0){
-				legFile = ScriptingEngine.fileFromGit(
+				legFiles = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Shoulder.stl");
-				legfile2 = ScriptingEngine.fileFromGit(
+				covers = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Shoulder Cover.stl");
 	
 			}
 			if(linkIndex ==1){
-				legFile = ScriptingEngine.fileFromGit(
+				legFiles = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Leg.stl");
+				covers = ScriptingEngine.fileFromGit(
+				"https://github.com/xaveagle/SpiderQuad.git",
+				"STLs/Leg Cover.stl");
 	
 			}
 	
 			if(linkIndex ==2){
-				legFile = ScriptingEngine.fileFromGit(
+				legFiles = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Foot.stl");
 			}
 		}
 		else{
 			if(linkIndex ==0){
-				legFile = ScriptingEngine.fileFromGit(
+				legFiles = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Shoulder Mirror.stl");
 	
 			}
 			if(linkIndex ==1){
-				legFile = ScriptingEngine.fileFromGit(
+				legFiles = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Leg Mirror.stl");
 	
 			}
 	
 			if(linkIndex ==2){
-				legFile = ScriptingEngine.fileFromGit(
+				legFiles = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Foot Mirror.stl");
 	
@@ -98,12 +101,12 @@ return new ICadGenerator(){
 
 		
 		// Load the .CSG from the disk and cache it in memory
-		println "Loading " +legFile
-		CSG body  = Vitamins.get(legFile)
+		println "Loading " +legFiles
+		CSG body  = Vitamins.get(legFiles)
 		CSG body2
 		  
-		if(legfile2 != null){
-			body2 = Vitamins.get(legfile2)
+		if(covers != null){
+			body2 = Vitamins.get(covers)
 		}
 		if(linkIndex ==0){
 			//body=moveDHValues(body,dh)
@@ -111,7 +114,7 @@ return new ICadGenerator(){
 				//.rotx(180)
 				//if(rear)
 					//body=body.rotx(180)
-					if(legfile2 != null){
+					if(covers != null){
 						body2=body2.rotx(180)
 					}
 				
@@ -125,12 +128,12 @@ return new ICadGenerator(){
 		}
 		
 		body.setManipulator(manipulator);
-		if(legfile2 != null)
+		if(covers != null)
 		body2.setManipulator(manipulator);
 		
 		def parts = [body] as ArrayList<CSG>
 		
-		if(legfile2 != null){
+		if(covers != null){
 		parts.add(body2)
 		}
 		
