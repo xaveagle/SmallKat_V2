@@ -61,7 +61,6 @@ return new ICadGenerator(){
 					"STLs/Foot.stl");
 				}
 			}
-		}
 			else{
 				if(linkIndex ==0){
 					legFile = ScriptingEngine.fileFromGit(
@@ -84,7 +83,6 @@ return new ICadGenerator(){
 				}
 			}
 		}
-		
 
 
 		ArrayList<DHLink> dhLinks = d.getChain().getLinks()
