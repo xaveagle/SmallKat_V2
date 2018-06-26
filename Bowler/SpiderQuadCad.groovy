@@ -25,9 +25,9 @@ return new ICadGenerator(){
 		ArrayList<CSG> allCad=new ArrayList<>();
 		String limbName = d.getScriptingName()
 		File legFiles = null
-		File covers = null
+		File legfile2 = null
 		boolean mirror=true
-		if(limbName.contains("Left"){
+		if(limbName.contains("Left")){
 			println "Mirror leg parts"
 			mirror=false
 		}
@@ -46,7 +46,7 @@ return new ICadGenerator(){
 				legFiles = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Shoulder.stl");
-				covers = ScriptingEngine.fileFromGit(
+				legfile2 = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Shoulder Cover.stl");
 	
@@ -55,9 +55,6 @@ return new ICadGenerator(){
 				legFiles = ScriptingEngine.fileFromGit(
 				"https://github.com/xaveagle/SpiderQuad.git",
 				"STLs/Leg.stl");
-				covers = ScriptingEngine.fileFromGit(
-				"https://github.com/xaveagle/SpiderQuad.git",
-				"STLs/Leg Cover.stl");
 	
 			}
 	
@@ -102,11 +99,11 @@ return new ICadGenerator(){
 		
 		// Load the .CSG from the disk and cache it in memory
 		println "Loading " +legFiles
-		CSG body  = Vitamins.get(legFiles)
+		CSG body  = Vitamins.get(legFile)
 		CSG body2
 		  
-		if(covers != null){
-			body2 = Vitamins.get(covers)
+		if(legfile2 != null){
+			body2 = Vitamins.get(legfile2)
 		}
 		if(linkIndex ==0){
 			//body=moveDHValues(body,dh)
@@ -114,7 +111,7 @@ return new ICadGenerator(){
 				//.rotx(180)
 				//if(rear)
 					//body=body.rotx(180)
-					if(covers != null){
+					if(legfile2 != null){
 						body2=body2.rotx(180)
 					}
 				
@@ -128,12 +125,12 @@ return new ICadGenerator(){
 		}
 		
 		body.setManipulator(manipulator);
-		if(covers != null)
+		if(legfile2 != null)
 		body2.setManipulator(manipulator);
 		
 		def parts = [body] as ArrayList<CSG>
 		
-		if(covers != null){
+		if(legfile2 != null){
 		parts.add(body2)
 		}
 		
