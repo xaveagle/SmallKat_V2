@@ -135,16 +135,16 @@ return new ICadGenerator(){
 			//body=moveDHValues(body,dh)
 				//body=body.roty(180)
 				//.rotx(180)
-				//if(rear)
+				if(rear)
 					//body=body.rotx(180)
 				
 		}
 		if(linkIndex ==1){
-			//body=body.roty(180)
+			body=body.roty(180)
 			}
 		
 		if(linkIndex ==2){
-			//body=body.roty(180)
+			body=body.roty(180)
 		}
 		
 		body.setManipulator(manipulator);
