@@ -99,7 +99,7 @@ return new ICadGenerator(){
 		
 		// Load the .CSG from the disk and cache it in memory
 		println "Loading " +legFiles
-		CSG body  = Vitamins.get(legFile)
+		CSG body  = Vitamins.get(legFiles)
 		CSG body2
 		  
 		if(legfile2 != null){
