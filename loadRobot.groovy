@@ -156,7 +156,7 @@ def dev = DeviceManager.getSpecificDevice( "hidDevice",{
 	return d
 })
 
-def cat =DeviceManager.getSpecificDevice( "MediumKat",{
+def quad =DeviceManager.getSpecificDevice( "SpiderQuad",{
 	//If the device does not exist, prompt for the connection
 	
 	MobileBase m = MobileBaseLoader.fromGit(
@@ -184,4 +184,4 @@ def cat =DeviceManager.getSpecificDevice( "MediumKat",{
 	return m
 })
 
-return cat
+return quad
