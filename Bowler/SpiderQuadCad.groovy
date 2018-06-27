@@ -161,13 +161,13 @@ return new ICadGenerator(){
 		File Cover1 = ScriptingEngine.fileFromGit(
 			"https://github.com/xaveagle/SpiderQuad.git",
 			"STLs/Leg Covers 1.stl");	
-		File Cover1 = ScriptingEngine.fileFromGit(
+		File Cover2 = ScriptingEngine.fileFromGit(
 			"https://github.com/xaveagle/SpiderQuad.git",
 			"STLs/Leg Covers 2.stl");
-		File Cover1 = ScriptingEngine.fileFromGit(
+		File Cover3 = ScriptingEngine.fileFromGit(
 			"https://github.com/xaveagle/SpiderQuad.git",
 			"STLs/Leg Covers 3.stl");
-		File Cover1 = ScriptingEngine.fileFromGit(
+		File Cover4 = ScriptingEngine.fileFromGit(
 			"https://github.com/xaveagle/SpiderQuad.git",
 			"STLs/Leg Covers 4.stl");
 		File BatteryHolder = ScriptingEngine.fileFromGit(
