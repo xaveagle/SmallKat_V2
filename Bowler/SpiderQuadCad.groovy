@@ -161,15 +161,31 @@ return new ICadGenerator(){
 		File Cover1 = ScriptingEngine.fileFromGit(
 			"https://github.com/xaveagle/SpiderQuad.git",
 			"STLs/Leg Covers 1.stl");	
+		File Cover1 = ScriptingEngine.fileFromGit(
+			"https://github.com/xaveagle/SpiderQuad.git",
+			"STLs/Leg Covers 2.stl");
+		File Cover1 = ScriptingEngine.fileFromGit(
+			"https://github.com/xaveagle/SpiderQuad.git",
+			"STLs/Leg Covers 3.stl");
+		File Cover1 = ScriptingEngine.fileFromGit(
+			"https://github.com/xaveagle/SpiderQuad.git",
+			"STLs/Leg Covers 4.stl");
+		File BatteryHolder = ScriptingEngine.fileFromGit(
+			"https://github.com/xaveagle/SpiderQuad.git",
+			"STLs/Battery Holder.stl");
 
 		// Load the .CSG from the disk and cache it in memory
 		CSG body  = Vitamins.get(mainBodyFile)
 		CSG tc = Vitamins.get(topCover)
-		CSG c1 = Vitamins.get(topCover)
+		CSG c1 = Vitamins.get(Cover1)
+		CSG c2 = Vitamins.get(Cover2)
+		CSG c3 = Vitamins.get(Cover3)
+		CSG c4 = Vitamins.get(Cover4)
+		CSG bh = Vitamins.get(BatteryHolder)
 
 		body.setManipulator(b.getRootListener());
 		body.setColor(javafx.scene.paint.Color.WHITE)
-		def parts = [body,tc,c1 ] as ArrayList<CSG>
+		def parts = [body,tc,c1,c2,c3,c4,bh ] as ArrayList<CSG>
 		for(int i=0;i<parts.size();i++){
 			parts.get(i).setColor(javafx.scene.paint.Color.GRAY)
 		}
