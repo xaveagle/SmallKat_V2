@@ -195,8 +195,8 @@
 </ZframeToRAS>
 
 <baseToZframe>
-	<x>-36.57</x>
-	<y>30.58</y>
+	<x>-30.58</x>
+	<y>36.57</y>
 	<z>9.13</z>
 	<rotw>0.3056073839421803</rotw>
 	<rotx>-0.0</rotx>
@@ -390,13 +390,13 @@
 </ZframeToRAS>
 
 <baseToZframe>
-	<x>36.57</x>
-	<y>-30.58</y>
+	<x>30.58</x>
+	<y>-36.57</y>
 	<z>9.13</z>
 	<rotw>0.9238795325112867</rotw>
 	<rotx>-0.0</rotx>
 	<roty>-0.0</roty>
-	<rotz>-0.3826834323650898</rotz>
+	<rotz>-0.38268343236508984</rotz>
 </baseToZframe>
 
 </leg>
@@ -585,13 +585,13 @@
 </ZframeToRAS>
 
 <baseToZframe>
-	<x>36.57</x>
-	<y>30.58</y>
+	<x>30.58</x>
+	<y>36.57</y>
 	<z>9.13</z>
 	<rotw>0.9238795325112867</rotw>
 	<rotx>-0.0</rotx>
 	<roty>-0.0</roty>
-	<rotz>0.3826834323650898</rotz>
+	<rotz>0.38268343236508984</rotz>
 </baseToZframe>
 
 </leg>
@@ -780,8 +780,8 @@
 </ZframeToRAS>
 
 <baseToZframe>
-	<x>-36.57</x>
-	<y>-30.58</y>
+	<x>-30.58</x>
+	<y>-36.57</y>
 	<z>9.13</z>
 	<rotw>0.38268343236508984</rotw>
 	<rotx>-0.0</rotx>
