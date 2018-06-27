@@ -158,14 +158,18 @@ return new ICadGenerator(){
 		File topCover = ScriptingEngine.fileFromGit(
 			"https://github.com/xaveagle/SpiderQuad.git",
 			"STLs/Top Cover.stl");
+		File Cover1 = ScriptingEngine.fileFromGit(
+			"https://github.com/xaveagle/SpiderQuad.git",
+			"STLs/Leg Covers 1.stl");	
 
 		// Load the .CSG from the disk and cache it in memory
 		CSG body  = Vitamins.get(mainBodyFile)
 		CSG tc = Vitamins.get(topCover)
+		CSG c1 = Vitamins.get(topCover)
 
 		body.setManipulator(b.getRootListener());
 		body.setColor(javafx.scene.paint.Color.WHITE)
-		def parts = [body,tc ] as ArrayList<CSG>
+		def parts = [body,tc,c1 ] as ArrayList<CSG>
 		for(int i=0;i<parts.size();i++){
 			parts.get(i).setColor(javafx.scene.paint.Color.GRAY)
 		}
