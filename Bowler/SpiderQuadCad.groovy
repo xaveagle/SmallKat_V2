@@ -188,6 +188,7 @@ return new ICadGenerator(){
 		def parts = [body,tc,c1,c2,c3,c4,bh ] as ArrayList<CSG>
 		for(int i=0;i<parts.size();i++){
 			parts.get(i).setColor(javafx.scene.paint.Color.RED)
+			parts.get(i).setManipulator(b.getRootListener());
 		}
 		return parts;
 	}
