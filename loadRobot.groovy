@@ -43,8 +43,8 @@ public class SimpleServoUDP extends UDPSimplePacketComs {
 	public SimpleServoUDP(def address) {
 		super(address);
 		addPollingPacket(servos);
-		addEvent(1962, {
-			writeBytes(1962, data);
+		addEvent(1804, {
+			writeBytes(1804, data);
 		});
 		addEvent(1804, {
 			readFloats(1804,status);
