@@ -1,14 +1,13 @@
-@GrabResolver(name='sonatype', root='https://oss.sonatype.org/content/repositories/releases/')
-@Grab(group='com.neuronrobotics', module='SimplePacketComsJava', version='0.1.6')
-@Grab(group='org.hid4java', module='hid4java', version='0.5.0')
+@Grab(group='com.neuronrobotics', module='SimplePacketComsJava', version='0.1.9')
+//@Grab(group='org.hid4java', module='hid4java', version='0.5.0')
 
 import edu.wpi.SimplePacketComs.*;
-import edu.wpi.SimplePacketComs.phy.HIDSimplePacketComs;
+import edu.wpi.SimplePacketComs.phy.*;
 import com.neuronrobotics.sdk.addons.kinematics.imu.*;
 
 if(args == null)
-	args = ["https://github.com/xaveagle/SpiderQuad.git",
-		"Bowler/SpiderQuad.xml"]
+	args = ["https://github.com/OperationSmallKat/SmallKat_V2.git",
+		"Bowler/MediumKat.xml"]
 
 public class SimpleServoHID extends HIDSimplePacketComs {
 	private PacketType servos = new edu.wpi.SimplePacketComs.BytePacketType(1962, 64);
@@ -35,12 +34,37 @@ public class SimpleServoHID extends HIDSimplePacketComs {
 	}
 }
 
+public class SimpleServoUDP extends UDPSimplePacketComs {
+	private PacketType servos = new edu.wpi.SimplePacketComs.BytePacketType(1962, 64);
+	private PacketType imuData = new edu.wpi.SimplePacketComs.FloatPacketType(1804, 64);
+	private final double[] status = new double[12];
+	private final byte[] data = new byte[16];
+	
+	public SimpleServoUDP(def address) {
+		super(address);
+		addPollingPacket(servos);
+		addPollingPacket(imuData);
+		addEvent(1962, {
+			writeBytes(1962, data);
+		});
+		addEvent(1804, {
+			readFloats(1804,status);
+		});
+	}
+	public double[] getImuData() {
+		return status;
+	}
+	public byte[] getData() {
+		return data;
+	}
+}
+
 
 public class HIDSimpleComsDevice extends NonBowlerDevice{
-	SimpleServoHID simple;
+	def simple;
 	
-	public HIDSimpleComsDevice(int vidIn, int pidIn){
-		simple = new SimpleServoHID(vidIn,pidIn)
+	public HIDSimpleComsDevice(def simp){
+		simple = simp
 		setScriptingName("hidbowler")
 	}
 	@Override
@@ -143,8 +167,15 @@ public class HIDRotoryLink extends AbstractRotoryLink{
 
 def dev = DeviceManager.getSpecificDevice( "hidDevice",{
 	//If the device does not exist, prompt for the connection
+	def simp = null;
 	
-	HIDSimpleComsDevice d = new HIDSimpleComsDevice(0x16C0 ,0x0486 )
+	HashSet<InetAddress> addresses = UDPSimplePacketComs.getAllAddresses("hidDevice");
+	if (addresses.size() < 1) {
+			simp = new SimpleServoHID(0x16C0 ,0x0486) 
+	}else{
+		simp = new SimpleServoUDP(addresses.get(0))
+	}
+	HIDSimpleComsDevice d = new HIDSimpleComsDevice(simp)
 	d.connect(); // Connect to it.
 
 	LinkFactory.addLinkProvider("hidfast",{LinkConfiguration conf->
@@ -156,7 +187,7 @@ def dev = DeviceManager.getSpecificDevice( "hidDevice",{
 	return d
 })
 
-def quad =DeviceManager.getSpecificDevice( "SpiderQuad",{
+def cat =DeviceManager.getSpecificDevice( "MediumKat",{
 	//If the device does not exist, prompt for the connection
 	
 	MobileBase m = MobileBaseLoader.fromGit(
@@ -184,4 +215,4 @@ def quad =DeviceManager.getSpecificDevice( "SpiderQuad",{
 	return m
 })
 
-return quad
+return cat
