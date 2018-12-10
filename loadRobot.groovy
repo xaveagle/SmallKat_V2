@@ -6,8 +6,8 @@ import edu.wpi.SimplePacketComs.phy.*;
 import com.neuronrobotics.sdk.addons.kinematics.imu.*;
 
 if(args == null)
-	args = ["https://github.com/OperationSmallKat/SmallKat_V2.git",
-		"Bowler/MediumKat.xml"]
+	args = ["https://github.com/xaveagle/SpiderQuad.git",
+		"Bowler/SpiderQuad.xml"]
 
 public class SimpleServoHID extends HIDSimplePacketComs {
 	private PacketType servos = new edu.wpi.SimplePacketComs.BytePacketType(1962, 64);
@@ -43,7 +43,6 @@ public class SimpleServoUDP extends UDPSimplePacketComs {
 	public SimpleServoUDP(def address) {
 		super(address);
 		addPollingPacket(servos);
-		addPollingPacket(imuData);
 		addEvent(1962, {
 			writeBytes(1962, data);
 		});
@@ -173,6 +172,7 @@ def dev = DeviceManager.getSpecificDevice( "hidDevice",{
 	if (addresses.size() < 1) {
 			simp = new SimpleServoHID(0x16C0 ,0x0486) 
 	}else{
+		
 		simp = new SimpleServoUDP(addresses.get(0))
 	}
 	HIDSimpleComsDevice d = new HIDSimpleComsDevice(simp)
