@@ -1,4 +1,4 @@
-@Grab(group='com.neuronrobotics', module='SimplePacketComsJava', version='0.1.9')
+@Grab(group='com.neuronrobotics', module='SimplePacketComsJava', version='0.6.4')
 //@Grab(group='org.hid4java', module='hid4java', version='0.5.0')
 
 import edu.wpi.SimplePacketComs.*;
@@ -100,7 +100,7 @@ public class HIDRotoryLink extends AbstractRotoryLink{
 	HIDSimpleComsDevice device;
 	int index =0;
 	int lastPushedVal = 0;
-	private static final Integer command =1962
+	private static final Integer command = 1962
 	/**
 	 * Instantiates a new HID rotory link.
 	 *
