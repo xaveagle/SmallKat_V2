@@ -173,7 +173,7 @@ def dev = DeviceManager.getSpecificDevice( "hidDevice",{
 			simp = new SimpleServoHID(0x16C0 ,0x0486) 
 	}else{
 		
-		simp = new SimpleServoUDP(addresses.get(0))
+		simp = new SimpleServoUDP(addresses.toArray()[0])
 	}
 	HIDSimpleComsDevice d = new HIDSimpleComsDevice(simp)
 	d.connect(); // Connect to it.
